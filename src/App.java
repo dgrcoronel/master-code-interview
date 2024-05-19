@@ -68,13 +68,14 @@ public class App {
 
     }
 
-    private static List<Integer> getIndexes(Integer[] array, int number) {
+    private static List<Integer> getIndexes(Integer[] nums, int target) {
 
-        for (int i = 0; i < array.length; i++) {
-            System.out.println("i = " + i);
-            for (int j = i + 1; j < array.length; j++) {
-                System.out.println("j = " + j);
-                if (array[i] + array[j] == number) {
+        for (int i = 0; i < nums.length; i++) {
+            int numberToFind = target - nums[i];
+            // System.out.println("i = " + i);
+            for (int j = i + 1; j < nums.length; j++) {
+                // System.out.println("j = " + j);
+                if (numberToFind == nums[j]) {
                     return List.of(i, j);
                 }
             }
