@@ -12,6 +12,7 @@ public class App {
         scenario1();
         scenario2();
         scenario3();
+        scenario4();
 
     }
 
@@ -54,10 +55,25 @@ public class App {
 
     }
 
+    private static void scenario4() {
+
+        System.out.println("\n### Scenario 4 - LeetCode ###");
+
+        Integer[] array = {2,5,5,11};
+        int number = 10;
+
+        List<Integer> indexes = getIndexes(array, number);
+        
+        System.out.println("The indexes that correspond the sum is: " + indexes);
+
+    }
+
     private static List<Integer> getIndexes(Integer[] array, int number) {
 
         for (int i = 0; i < array.length; i++) {
-            for (int j = 1; j < array.length; j++) {
+            System.out.println("i = " + i);
+            for (int j = i + 1; j < array.length; j++) {
+                System.out.println("j = " + j);
                 if (array[i] + array[j] == number) {
                     return List.of(i, j);
                 }
@@ -65,4 +81,6 @@ public class App {
         }
         return null;
     }
+
+    
 }
